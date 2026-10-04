@@ -75,8 +75,8 @@ $provider = new Azure(
 );
 
 //Pass the OAuth provider instance to PHPMailer
-$mail->setOAuth(
-    new OAuth(
+
+$oauth = new OAuth(
         [
             'provider' => $provider,
             'clientId' => $clientId,
@@ -85,7 +85,7 @@ $mail->setOAuth(
             'userName' => $email,
         ]
     )
-);
+$mail->setOAuth($oauth);
 //End Option 1
 
 //Option 2: Another OAuth library as OAuth2 token provider
@@ -123,4 +123,9 @@ if (!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message sent!';
+}
+//check to see if a new refresh token has been issued
+$newRefreshToken = $oauth->getOauthToken()->getRefreshToken();
+if($newRefreshToken !== $refreshToken && newRefreshToken !== "") {
+//save the new refresh token
 }
