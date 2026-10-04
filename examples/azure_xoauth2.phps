@@ -126,6 +126,6 @@ if (!$mail->send()) {
 }
 //check to see if a new refresh token has been issued
 $newRefreshToken = $oauth->getOauthToken()->getRefreshToken();
-if($newRefreshToken !== $refreshToken && newRefreshToken !== "") {
+if ($newRefreshToken !== $refreshToken && newRefreshToken !== "") {
 //save the new refresh token
 }
