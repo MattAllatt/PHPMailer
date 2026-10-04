@@ -77,14 +77,14 @@ $provider = new Azure(
 //Pass the OAuth provider instance to PHPMailer
 
 $oauth = new OAuth(
-        [
-            'provider' => $provider,
-            'clientId' => $clientId,
-            'clientSecret' => $clientSecret,
-            'refreshToken' => $refreshToken,
-            'userName' => $email,
-        ]
-    )
+    [
+        'provider' => $provider,
+        'clientId' => $clientId,
+        'clientSecret' => $clientSecret,
+        'refreshToken' => $refreshToken,
+        'userName' => $email,
+    ]
+);
 $mail->setOAuth($oauth);
 //End Option 1
 
