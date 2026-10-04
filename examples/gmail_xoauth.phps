@@ -118,6 +118,6 @@ if (!$mail->send()) {
 }
 //Check to see if the provider has issued a new refresh token
 $newRefreshToken = $oauthTokenProvider->getOauthToken()->getRefreshToken();
-if($newRefreshToken !== $refreshToken && $newRefreshToken !== "") {
+if ($newRefreshToken !== $refreshToken && $newRefreshToken !== "") {
 // A new refresh token has been issued.
 }
