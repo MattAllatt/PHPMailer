@@ -137,7 +137,7 @@ class OAuth implements OAuthTokenProvider
         );
     }
     /**
-     * Getter for oathRefreshToken.
+     * Getter for oauthToken.
      *
      * @return AccessToken
      */
